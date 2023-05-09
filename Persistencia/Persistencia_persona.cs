@@ -1,4 +1,4 @@
-﻿using POO_EntityFramework.Entidades;
+﻿using POO_EntityFramework.Negocios.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

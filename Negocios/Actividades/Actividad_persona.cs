@@ -1,4 +1,4 @@
-﻿using POO_EntityFramework.Entidades;
+﻿using POO_EntityFramework.Negocios.Entidades;
 using POO_EntityFramework.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POO_EntityFramework.Negocios
+namespace POO_EntityFramework.Negocios.Actividades
 {
     public class Negocio_persona
     {

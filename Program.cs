@@ -1,5 +1,6 @@
-﻿using POO_EntityFramework.Entidades;
-using POO_EntityFramework.Negocios;
+﻿using POO_EntityFramework.Negocios.Entidades;
+using POO_EntityFramework.Negocios.Actividades;
+
 main();
 void main()
 {

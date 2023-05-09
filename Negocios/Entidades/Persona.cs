@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POO_EntityFramework.Entidades
+namespace POO_EntityFramework.Negocios.Entidades
 {
     public  class Persona
     {
