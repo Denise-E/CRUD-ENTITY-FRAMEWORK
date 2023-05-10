@@ -56,7 +56,7 @@ namespace POO_EntityFramework
                     }
                 case 4:
                     {
-                        //Actualizar();
+                        Actualizar();
                         break;
                     }
                 case 5:
@@ -119,6 +119,43 @@ namespace POO_EntityFramework
             else
             {
                 Console.WriteLine("No se encontró a nadie con el ID solicitado");
+            }
+
+            Console.ReadKey();
+            Main();
+        }
+
+        static void Actualizar()
+        {
+            Console.WriteLine("Ingrese el id de la persona a actualizar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Persona? p = neg.Leer(id);
+
+            if (p != null)
+            {
+                Console.WriteLine("Ingrese el nuevo nombre de la persona: ");
+                string nombre = Console.ReadLine();
+
+                while(nombre == null){
+                    Console.WriteLine("Ingrese el nuevo nombre de la persona: ");
+                    nombre = Console.ReadLine();
+                }
+
+                p.nombre = nombre;
+                bool actualizado = neg.Actualizar(p);
+                if (actualizado)
+                {
+                    Console.WriteLine("Persona actualizada");
+                }
+                else
+                {
+                    Console.WriteLine("Persona no actualizada");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Persona no encontrada");
             }
 
             Console.ReadKey();
