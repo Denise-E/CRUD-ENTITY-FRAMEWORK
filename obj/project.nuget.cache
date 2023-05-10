@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sBEbTqj7EVd67I6E9lkvYXGJ8h7BFRDkt/9kh2z6TgAmqFSTtxL534xfd1aD3pPcXU482vUFg02omt+wb3tOFw==",
+  "dgSpecHash": "KJnE5AGJsgERcX4CH0hpGkbcjxi2nQbO6XAVsHJr/+U1HUf6Las6nhKo8mUC6WGx5zA70txdQdw0VBdtj93MKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\POO_EntityFramework\\POO_EntityFramework\\POO_EntityFramework.csproj",
+  "projectFilePath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\CRUD-ENTITY-FRAMEWORK\\POO_EntityFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\denue\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\denue\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

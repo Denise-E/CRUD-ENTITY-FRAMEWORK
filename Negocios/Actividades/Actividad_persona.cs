@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace POO_EntityFramework.Negocios.Actividades
 {
-    public class Negocio_persona
+    public class Actividad_persona
     {
         Persistencia_persona pers = new Persistencia_persona();
 

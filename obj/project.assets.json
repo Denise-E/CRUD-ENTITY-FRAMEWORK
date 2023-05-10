@@ -3466,11 +3466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\POO_EntityFramework\\POO_EntityFramework\\POO_EntityFramework.csproj",
+      "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\CRUD-ENTITY-FRAMEWORK\\POO_EntityFramework.csproj",
       "projectName": "POO_EntityFramework",
-      "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\POO_EntityFramework\\POO_EntityFramework\\POO_EntityFramework.csproj",
+      "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\CRUD-ENTITY-FRAMEWORK\\POO_EntityFramework.csproj",
       "packagesPath": "C:\\Users\\denue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\POO_EntityFramework\\POO_EntityFramework\\obj\\",
+      "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\CRUD-ENTITY-FRAMEWORK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\denue\\AppData\\Roaming\\NuGet\\NuGet.Config",
