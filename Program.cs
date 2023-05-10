@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using POO_EntityFramework.Persistencia;
 using POO_EntityFramework.Negocios.Entidades;
 using POO_EntityFramework.Negocios.Actividades;
+using System.Runtime.ConstrainedExecution;
 
 namespace POO_EntityFramework
 {
@@ -15,14 +16,14 @@ namespace POO_EntityFramework
         static void Main()
         {
 
-
-
             Console.Clear();
             Console.WriteLine("MANEJO DE PERSONAS");
             Console.WriteLine("-------");
             Console.WriteLine("1 - Alta persona");
             Console.WriteLine("2 - Listar personas");
-            Console.WriteLine("3 - Borrar persona por ID");
+            Console.WriteLine("3 - Buscar persona");
+            Console.WriteLine("4 - Actualizar persona");
+            Console.WriteLine("5 - Borrar persona");
             Console.WriteLine("-------");
             Console.Write("Ingrese una de las opciones: ");
 
@@ -50,6 +51,16 @@ namespace POO_EntityFramework
                     }
                 case 3:
                     {
+                        Buscar();
+                        break;
+                    }
+                case 4:
+                    {
+                        //Actualizar();
+                        break;
+                    }
+                case 5:
+                    {
                         Borrar();
                         break;
                     }
@@ -76,34 +87,6 @@ namespace POO_EntityFramework
                 Main();
         }
 
-            static void Borrar()
-            {
-                Console.WriteLine("Ingrese el id de la persona a borrar: ");
-                int id = Convert.ToInt32(Console.ReadLine());
-
-                Persona? p = neg.Leer(id);
-
-                if (p != null)
-                {
-                    bool borrado = neg.Borrar(p);
-                    if (borrado)
-                    {
-                        Console.WriteLine("Persona borrada");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Persona no borrada");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Persona no encontrada");
-                }
-
-            Console.ReadKey();
-            Main();
-        }
-
 
             static void Listar()
             {
@@ -117,8 +100,58 @@ namespace POO_EntityFramework
 
                 Console.ReadKey();
                 Main();
+            }
+
+        static void Buscar()
+        {
+            Console.WriteLine("Ingrese el id de la persona a buscar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Persona? p = neg.Leer(id);
+
+            if (p != null)
+            {
+                Console.WriteLine("Los datos de la persona buscada son:");
+                Console.WriteLine("ID: " + p.id);
+                Console.WriteLine("Nombre: " + p.nombre);
+                Console.WriteLine("***********************");
+            }
+            else
+            {
+                Console.WriteLine("No se encontró a nadie con el ID solicitado");
+            }
+
+            Console.ReadKey();
+            Main();
+        }
+        static void Borrar()
+        {
+            Console.WriteLine("Ingrese el id de la persona a borrar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Persona? p = neg.Leer(id);
+
+            if (p != null)
+            {
+                bool borrado = neg.Borrar(p);
+                if (borrado)
+                {
+                    Console.WriteLine("Persona borrada");
+                }
+                else
+                {
+                    Console.WriteLine("Persona no borrada");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Persona no encontrada");
+            }
+
+            Console.ReadKey();
+            Main();
         }
 
-     }
+    }
 
 }
