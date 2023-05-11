@@ -7,6 +7,7 @@ using POO_EntityFramework.Persistencia;
 using POO_EntityFramework.Negocios.Entidades;
 using POO_EntityFramework.Negocios.Actividades;
 using System.Runtime.ConstrainedExecution;
+using Microsoft.IdentityModel.Tokens;
 
 namespace POO_EntityFramework
 {
@@ -70,7 +71,14 @@ namespace POO_EntityFramework
             {
                 Persona newP = new Persona();
                 Console.WriteLine("Ingrese su nombre ");
-                newP.nombre = Console.ReadLine();
+                string nombre = Console.ReadLine();
+
+                while(nombre.IsNullOrEmpty()) 
+                {
+                    Console.WriteLine("Debe ingresar su nombre ");
+                    nombre = Console.ReadLine();
+                }
+                newP.nombre = nombre;
 
                 bool estado = neg.Crear(newP);
 

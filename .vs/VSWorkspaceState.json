@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Negocios\\Actividades",
-    "\\Negocios\\Entidades"
+    "\\Negocios",
+    "\\Negocios\\Entidades",
+    "\\Persistencia"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\Persistencia",
   "PreviewInSolutionExplorer": false
 }
