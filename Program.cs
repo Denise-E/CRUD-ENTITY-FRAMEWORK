@@ -113,7 +113,16 @@ namespace POO_EntityFramework
         static void Buscar()
         {
             Console.WriteLine("Ingrese el id de la persona a buscar: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+
+
+            short id;
+            bool sel_checked = short.TryParse(Console.ReadLine(), out id);
+
+            while (!sel_checked)
+            {
+                Console.WriteLine("Ingrese una opcion valida: ");
+                sel_checked = short.TryParse(Console.ReadLine(), out id);
+            }
 
             Persona? p = neg.Leer(id);
 
@@ -136,7 +145,14 @@ namespace POO_EntityFramework
         static void Actualizar()
         {
             Console.WriteLine("Ingrese el id de la persona a actualizar: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id;
+            bool sel_checked = int.TryParse(Console.ReadLine(), out id);
+
+            while (!sel_checked)
+            {
+                Console.WriteLine("Ingrese una id valido: ");
+                sel_checked = int.TryParse(Console.ReadLine(), out id);
+            }
 
             Persona? p = neg.Leer(id);
 
@@ -145,13 +161,14 @@ namespace POO_EntityFramework
                 Console.WriteLine("Ingrese el nuevo nombre de la persona: ");
                 string nombre = Console.ReadLine();
 
-                while(nombre == null){
-                    Console.WriteLine("Ingrese el nuevo nombre de la persona: ");
+                while(nombre.IsNullOrEmpty()){
+                    Console.WriteLine("Debe ingresar el nuevo nombre de la persona: ");
                     nombre = Console.ReadLine();
                 }
 
                 p.nombre = nombre;
                 bool actualizado = neg.Actualizar(p);
+
                 if (actualizado)
                 {
                     Console.WriteLine("Persona actualizada");
@@ -172,9 +189,16 @@ namespace POO_EntityFramework
         static void Borrar()
         {
             Console.WriteLine("Ingrese el id de la persona a borrar: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id;
+            bool sel_checked = int.TryParse(Console.ReadLine(), out id);
 
-            Persona? p = neg.Leer(id);
+            while (!sel_checked)
+            {
+                Console.WriteLine("Ingrese una id valido: ");
+                sel_checked = int.TryParse(Console.ReadLine(), out id);
+            }
+
+            Persona ? p = neg.Leer(id);
 
             if (p != null)
             {
