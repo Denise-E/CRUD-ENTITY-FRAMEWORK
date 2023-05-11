@@ -12,7 +12,10 @@ using Microsoft.IdentityModel.Tokens;
 namespace POO_EntityFramework
 {
     internal class Program
+
+
     {
+        static validaciones_generales validacion = new validaciones_generales();
         static Actividad_persona neg = new Actividad_persona();
         static void Main()
         {
@@ -70,14 +73,9 @@ namespace POO_EntityFramework
             static void Crear()
             {
                 Persona newP = new Persona();
-                Console.WriteLine("Ingrese su nombre ");
-                string nombre = Console.ReadLine();
 
-                while(nombre.IsNullOrEmpty()) 
-                {
-                    Console.WriteLine("Debe ingresar su nombre ");
-                    nombre = Console.ReadLine();
-                }
+                nombre = validacion.validarString("Ingrese su nombre: ");
+
                 newP.nombre = nombre;
 
                 bool estado = neg.Crear(newP);
@@ -112,17 +110,7 @@ namespace POO_EntityFramework
 
         static void Buscar()
         {
-            Console.WriteLine("Ingrese el id de la persona a buscar: ");
-
-
-            short id;
-            bool sel_checked = short.TryParse(Console.ReadLine(), out id);
-
-            while (!sel_checked)
-            {
-                Console.WriteLine("Ingrese una opcion valida: ");
-                sel_checked = short.TryParse(Console.ReadLine(), out id);
-            }
+            id = validacion.validarInt("Ingrese el id de la persona a buscar: ")
 
             Persona? p = neg.Leer(id);
 
@@ -144,29 +132,15 @@ namespace POO_EntityFramework
 
         static void Actualizar()
         {
-            Console.WriteLine("Ingrese el id de la persona a actualizar: ");
-            int id;
-            bool sel_checked = int.TryParse(Console.ReadLine(), out id);
-
-            while (!sel_checked)
-            {
-                Console.WriteLine("Ingrese una id valido: ");
-                sel_checked = int.TryParse(Console.ReadLine(), out id);
-            }
+            int id = validacion.validarInt("Ingrese el id de la persona a actualizar: "))
 
             Persona? p = neg.Leer(id);
 
             if (p != null)
             {
-                Console.WriteLine("Ingrese el nuevo nombre de la persona: ");
-                string nombre = Console.ReadLine();
-
-                while(nombre.IsNullOrEmpty()){
-                    Console.WriteLine("Debe ingresar el nuevo nombre de la persona: ");
-                    nombre = Console.ReadLine();
-                }
-
+                string nombre = validacion.validarString("Ingrese el nuevo nombre de la persona: ");
                 p.nombre = nombre;
+
                 bool actualizado = neg.Actualizar(p);
 
                 if (actualizado)
@@ -188,15 +162,7 @@ namespace POO_EntityFramework
         }
         static void Borrar()
         {
-            Console.WriteLine("Ingrese el id de la persona a borrar: ");
-            int id;
-            bool sel_checked = int.TryParse(Console.ReadLine(), out id);
-
-            while (!sel_checked)
-            {
-                Console.WriteLine("Ingrese una id valido: ");
-                sel_checked = int.TryParse(Console.ReadLine(), out id);
-            }
+            int id = validacion.validarInt("Ingrese el id de la persona a borrar: "));
 
             Persona ? p = neg.Leer(id);
 
